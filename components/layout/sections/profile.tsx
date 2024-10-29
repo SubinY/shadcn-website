@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { CardBody, CardContainer, CardItem } from "../../ui/3d-card";
 import { FlipWords } from "../../ui/flip-words";
@@ -13,12 +13,15 @@ const styles = {};
 export const ProfileSection = () => {
   const words = ["GYM SUMMER", "可以叫我阿占"];
 
+  const durationCalc = useCallback(
+    (duration: number) => ({ "--duration": duration } as unknown),
+    []
+  );
+
   return (
     <section className="w-full px-4 lg:px-16 xl:px-32 2xl:px-44 relative z-10 py-12 my-8 flex flex-wrap-reverse md:flex-nowrap justify-items-center justify-around items-center gap-16">
       <CardContainer className="inter-var">
-        <CardBody
-          className="bg-gradient-to-rb relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black w-auto sm:w-[24rem] h-auto rounded-xl p-6"
-        >
+        <CardBody className="bg-gradient-to-rb relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black w-auto sm:w-[24rem] h-auto rounded-xl p-6">
           <CardItem
             translateZ="50"
             className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -88,7 +91,7 @@ export const ProfileSection = () => {
         className={cn(
           "absolute flex transform-gpu animate-orbit items-center justify-center rounded-full border [animation-delay:calc(var(--delay)*1000ms)] dark:bg-white/10 h-[50px] w-[50px] border-none bg-transparent -z-10"
         )}
-        style={{ "--duration": 10, "--radius": 300, "--delay": -20 }}
+        style={{ "--duration": 10, "--radius": 300, "--delay": -20 } as any}
       >
         <Image
           src="/vue.svg"
@@ -103,7 +106,7 @@ export const ProfileSection = () => {
         className={cn(
           "absolute flex transform-gpu animate-orbit items-center justify-center rounded-full border [animation-delay:calc(var(--delay)*1000ms)] dark:bg-white/10 h-[50px] w-[50px] border-none bg-transparent -z-10"
         )}
-        style={{ "--duration": 15, "--radius": 300, "--delay": -20 }}
+        style={{ "--duration": 15, "--radius": 300, "--delay": -20 } as any}
       >
         <Image
           src="/react.svg"
@@ -118,7 +121,7 @@ export const ProfileSection = () => {
         className={cn(
           "absolute flex transform-gpu animate-orbit items-center justify-center rounded-full border [animation-delay:calc(var(--delay)*1000ms)] dark:bg-white/10 h-[50px] w-[50px] border-none bg-transparent -z-10"
         )}
-        style={{ "--duration": 20, "--radius": 300, "--delay": -20 }}
+        style={{ "--duration": 20, "--radius": 300, "--delay": -20 } as any}
       >
         <Image
           src="/nodejs.svg"
@@ -133,7 +136,7 @@ export const ProfileSection = () => {
         className={cn(
           "absolute flex transform-gpu animate-orbit items-center justify-center rounded-full border [animation-delay:calc(var(--delay)*1000ms)] dark:bg-white/10 h-[50px] w-[50px] border-none bg-transparent -z-10"
         )}
-        style={{ "--duration": 25, "--radius": 300, "--delay": -20 }}
+        style={{ "--duration": 25, "--radius": 300, "--delay": -20 } as any}
       >
         <Image
           src="/devops.svg"
@@ -148,7 +151,7 @@ export const ProfileSection = () => {
         className={cn(
           "absolute flex transform-gpu animate-orbit items-center justify-center circle rounded-full border [animation-delay:calc(var(--delay)*1000ms)] dark:bg-white/10 h-[150px] w-[150px] border-none bg-transparent -z-10"
         )}
-        style={{ "--duration": 8, "--radius": 300, "--delay": -20 }}
+        style={{ "--duration": 8, "--radius": 300, "--delay": -20 } as any}
       >
         <Image
           src="/profile.jpg"
