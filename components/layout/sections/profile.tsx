@@ -39,7 +39,7 @@ export const ProfileSection = () => {
             translateZ="50"
             className="text-xl font-bold text-neutral-600 dark:text-white mt-4"
           >
-            I'm a:
+            I am a:
           </CardItem>
           <CardItem
             translateZ={20}
