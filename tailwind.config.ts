@@ -56,6 +56,9 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: {
+        'gradient-to-rb': 'linear-gradient(to right bottom, #fcfcfd 20%, #d0d2d7 150%)',
+      },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
         lg: "var(--radius)",

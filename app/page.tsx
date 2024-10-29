@@ -10,6 +10,7 @@ import { ServicesSection } from "@/components/layout/sections/services";
 import { SponsorsSection } from "@/components/layout/sections/sponsors";
 import { TeamSection } from "@/components/layout/sections/team";
 import { TestimonialSection } from "@/components/layout/sections/testimonial";
+import { ProfileSection } from "@/components/layout/sections/profile";
 
 export const metadata = {
   title: "Shadcn - Landing template",
@@ -42,6 +43,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+      <ProfileSection />
       <HeroSection />
       <SponsorsSection />
       <BenefitsSection />
