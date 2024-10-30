@@ -7,8 +7,7 @@ import { CardBody, CardContainer, CardItem } from "../../ui/3d-card";
 import { FlipWords } from "../../ui/flip-words";
 import Link from "next/link";
 import { routeList } from "../config";
-
-const styles = {};
+import { WorkCard } from "./workcard";
 
 export const ProfileSection = () => {
   const words = ["GYM SUMMER", "可以叫我阿占"];
@@ -29,7 +28,6 @@ export const ProfileSection = () => {
             My name is:
           </CardItem>
           <CardItem
-            as="p"
             translateZ="60"
             className="text-neutral-500 text-[40px] w-full relative py-10 border-b-2 border-slate-700 font-bold dark:text-neutral-300"
           >
@@ -55,6 +53,11 @@ export const ProfileSection = () => {
                 </Link>
               </div>
             ))}
+          </CardItem>
+          <CardItem translateZ={20}>
+            <Link href="#wordcard">
+              <div className="bg-primary w-16 h-16 absolute -left-10 -bottom-10 rounded-full"></div>
+            </Link>
           </CardItem>
         </CardBody>
       </CardContainer>

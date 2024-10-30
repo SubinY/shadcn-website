@@ -76,6 +76,8 @@ html {
 /* *=========== Orange theme =========== */
 @layer base {
   :root {
+    --gradient-body-image: radial-gradient(circle farthest-corner at 100% 50%,#d1d3d6,#fcfcfd);;
+
     --background: 216 6% 98%;
     --foreground: 20 14.3% 4.1%;
 
@@ -107,6 +109,8 @@ html {
   }
 
   .dark {
+    --gradient-body-image: none;
+    
     --background: 20 14.3% 4.1%;
     --foreground: 60 9.1% 97.8%;
 
@@ -148,8 +152,12 @@ html {
 @layer base {
   * {
     @apply border-border;
+    /* font-family: Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC",
+      "Hiragino Sans GB", "Noto Serif SC", "Microsoft Yahei",
+      "WenQuanYi Micro Hei", "ST Heiti", sans-serif; */
   }
   body {
+    /* background-image: radial-gradient(circle farthest-corner at 100% 50%,#d1d3d6,#fcfcfd); */
     @apply bg-background text-foreground;
   }
 }
@@ -165,5 +173,5 @@ html {
 }
 
 .animate-orbit {
-  animation: orbit calc(var(--duration)* 1s) linear infinite;
+  animation: orbit calc(var(--duration) * 1s) linear infinite;
 }

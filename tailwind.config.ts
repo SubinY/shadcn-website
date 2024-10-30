@@ -1,4 +1,8 @@
 const animate = require("tailwindcss-animate");
+const svgToDataUri = require("mini-svg-data-uri");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -57,7 +61,10 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'gradient-to-rb': 'linear-gradient(to right bottom, #fcfcfd 20%, #d0d2d7 150%)',
+        "gradient-to-rb":
+          "linear-gradient(to right bottom, #fcfcfd 20%, #d0d2d7 150%)",
+        "gradient-body":
+          "var(--gradient-body-image)",
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -91,5 +98,19 @@ module.exports = {
       },
     },
   },
-  plugins: [animate],
+  plugins: [
+    animate,
+    function ({ matchUtilities, theme }: any) {
+      matchUtilities(
+        {
+          "bg-dot-thick": (value: any) => ({
+            backgroundImage: `url("${svgToDataUri(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`
+            )}")`,
+          }),
+        },
+        { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
+      );
+    },
+  ],
 };

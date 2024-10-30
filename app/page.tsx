@@ -11,6 +11,9 @@ import { SponsorsSection } from "@/components/layout/sections/sponsors";
 import { TeamSection } from "@/components/layout/sections/team";
 import { TestimonialSection } from "@/components/layout/sections/testimonial";
 import { ProfileSection } from "@/components/layout/sections/profile";
+import { BgMotionSection } from "@/components/layout/sections/bgmotion";
+import { WorkCardSeciton } from "@/components/layout/sections/workcard";
+import { SkillSection } from "@/components/layout/sections/skill";
 
 export const metadata = {
   title: "Shadcn - Landing template",
@@ -43,7 +46,10 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+      <BgMotionSection />
       <ProfileSection />
+      <WorkCardSeciton />
+      <SkillSection />
       <HeroSection />
       <SponsorsSection />
       <BenefitsSection />
