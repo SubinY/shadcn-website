@@ -14,6 +14,7 @@ import { ProfileSection } from "@/components/layout/sections/profile";
 import { BgMotionSection } from "@/components/layout/sections/bgmotion";
 import { WorkCardSeciton } from "@/components/layout/sections/workcard";
 import { SkillSection } from "@/components/layout/sections/skill";
+import { GET as runGet } from "./api/run/route";
 
 export const metadata = {
   title: "Shadcn - Landing template",
@@ -43,12 +44,15 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+
+  const runData = await runGet();
+  console.log(runData, 'runData');
   return (
     <>
       <BgMotionSection />
       <ProfileSection />
-      <WorkCardSeciton />
+      <WorkCardSeciton data={runData} />
       <SkillSection />
       <HeroSection />
       <SponsorsSection />
