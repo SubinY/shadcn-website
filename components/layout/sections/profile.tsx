@@ -7,7 +7,6 @@ import { CardBody, CardContainer, CardItem } from "../../ui/3d-card";
 import { FlipWords } from "../../ui/flip-words";
 import Link from "next/link";
 import { routeList } from "../config";
-import { WorkCard } from "./workcard";
 
 export const ProfileSection = () => {
   const words = ["GYM SUMMER", "可以叫我阿占"];
